@@ -1,0 +1,43 @@
+Pipeline {
+    agent any
+      tools {
+         terraform 'terraform'
+}
+}
+
+   Stages    
+  
+     stage ("checkout from git") {
+       steps {
+         git branch: 'main', credentialsId: '75e2a481-55e8-4b30-97d8-bc5f966e5f07', url: 'https://github.com/12Tubo/3tier-architecture-terraform-jenkins-pipeline.git' 
+    }
+}
+
+     Stage ("terraform init") {
+       Steps {
+         sh 'terraform init'
+}
+}
+     Stage ('terraform fmt') {
+       steps {
+         sh 'terraform fmt'
+  }
+  }
+     Stage ('terraform validate') {
+       steps {
+         sh ' terraform validate'
+    } 
+  }    
+      
+     Stage ('terraform plan') {
+       steps {
+         sh ' terraform plan'
+    }
+  }        
+      
+     Stage ('terraform apply') {
+       steps {
+         sh ' terraform apply --auto -approve'
+  }
+  }
+      
