@@ -1,6 +1,6 @@
 
 # creating security group
-Resources "aws_security_group" "demosg" {
+resources "aws_security_group" "demosg" {
   Vpc_id =   "${ aws_vpc.main.id }"
   #inbound rules
   # http access from anywhere
@@ -9,7 +9,7 @@ Resources "aws_security_group" "demosg" {
     to_port          = 80
     protocol         = "tcp"
     cidr_blocks      = [ "0.0.0.0/0"]
-
+  }
   # https access from anywhere
   ingress {
     from_port        = 443

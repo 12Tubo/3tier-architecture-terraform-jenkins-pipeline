@@ -7,7 +7,7 @@ resource "aws_lb" "external-alb" {
   security_groups    = [aws_security_group. demosg.id]
   subnets            = [aws_subnet.public-subnet.id, aws_subnet.public-subnet-1.id]
   
- 
+}
 
 resource "aws_lb_target_group" "target elb" {
   name = "ALB TG"
