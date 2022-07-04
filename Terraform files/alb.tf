@@ -9,10 +9,10 @@ resource "aws_lb" "external-alb" {
   
  
 
-resource “aws_lb_target_group” “target elb” {
-  name = “ ALB TG”
+resource "aws_lb_target_group" "target elb" {
+  name = "ALB TG"
   port = 80
-  protocol = “HTTP”
+  protocol = "HTTP"
   vpc_id = aws_vpc.main.id
 
 resource "aws_lb_target_group_attachment" "attachment" {
@@ -20,7 +20,7 @@ resource "aws_lb_target_group_attachment" "attachment" {
   target_id        = aws_instance.demoinstance.id
   port             = 80
 depends_on = [
-  aws_instance.demoinstance,
+  aws_instance.demoinstance
 ]
 }
 
@@ -30,7 +30,7 @@ resource "aws_lb_target_group_attachment" "attachment" {
   target_id        = aws_instance.demoinstance1.id
   port             = 80
 depends_on = [
-  aws_instance.demoinstance1,
+  aws_instance.demoinstance1
 ]
 }
 
