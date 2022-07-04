@@ -52,7 +52,7 @@ resource "aws_subnet" "public-subnet-1" {
   cidr_block =   "${var.subnet4_cidr}"
   map_public_ip_on_launch = false
   availability_zone = "us-east-1a"
-
+ }
   tags = {
     Name = "database subnet 1"
   }
@@ -65,5 +65,5 @@ resource "aws_subnet" "database-subnet-2" {
   availability_zone = "us-east-1a"
 }
   tags = {
-    Name = "database subnet 2"
+    Name = "db subnet 2"
   }
