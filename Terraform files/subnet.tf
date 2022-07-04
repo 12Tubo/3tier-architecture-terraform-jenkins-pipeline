@@ -30,7 +30,7 @@ resource "aws_subnet" "public-subnet-1" {
   map_public_ip_on_launch = false
   availability_zone = "us-east-1b"
 
-  tags = {
+ tags = {
     Name = "application subnet 1"
 
 
@@ -41,12 +41,12 @@ resource "aws_subnet" "public-subnet-1" {
   map_public_ip_on_launch = false
   availability_zone = "us-east-1b"
 
-  tags = {
-    Name = "application subnet 1"
+ tags = {
+    Name = "application subnet 2"
 
 
 # creating ist database subnet
-resource "aws_subnet" "database-subnet-1" {
+ resource "aws_subnet" "database-subnet-1" {
   vpc_id     = "${aws_vpc.main.id}"
   cidr_block =   "${var.subnet4_cidr}"
   map_public_ip_on_launch = false
