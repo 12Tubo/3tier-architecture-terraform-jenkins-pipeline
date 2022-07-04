@@ -9,7 +9,7 @@ resource "aws_lb" "external-alb" {
 
 }
 
-resource "aws_lb_target_group" "target elb" {
+resource "aws_lb_target_group" "target_elb" {
   name     = "ALB TG"
   port     = 80
   protocol = "HTTP"
@@ -25,7 +25,7 @@ resource "aws_lb_target_group_attachment" "attachment" {
 }
 
 
-resource "aws_lb_target_group_attachment" "attachment" {
+resource "aws_lb_target_group_attachment" "attach" {
   target_group_arn = aws_lb_target_group.external-alb.arn
   target_id        = aws_instance.demoinstance1.id
   port             = 80
@@ -34,7 +34,7 @@ resource "aws_lb_target_group_attachment" "attachment" {
   ]
 }
 
-resource "aws_lb_listener" "external elb" {
+resource "aws_lb_listener" "external_elb" {
   load_balancer_arn = aws_lb.external-alb.arn
   port              = "80"
   protocol          = "HTTP"
