@@ -1,5 +1,5 @@
 # Creating its ec2 instance in public subnet
-resource "aws instance" "demo instance" {
+resource "aws_instance" "demo_instance" {
 
 
   ami                         = "ami-0cff7528ff583bf9a"
@@ -21,7 +21,7 @@ resource "aws instance" "demo instance" {
 
 # creating 2nd ec2 instance in public subnet
 
-resource "aws instance" "demo instance" {
+resource "aws_instance" "demo_instance2" {
 
 
   ami           = ami-0cff7528ff583bf9a
