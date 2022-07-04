@@ -31,8 +31,9 @@ resource "aws_subnet" "public-subnet-1" {
   availability_zone = "us-east-1b"
 
  tags = {
+ 
     Name = "application subnet 1"
-
+ }
 
 # creating 2nd application subnet
  resource "aws_subnet" "application-subnet-2" {
@@ -44,7 +45,7 @@ resource "aws_subnet" "public-subnet-1" {
  tags = {
     Name = "application subnet 2"
 
-
+ }
 # creating ist database subnet
  resource "aws_subnet" "database-subnet-1" {
   vpc_id     = "${aws_vpc.main.id}"
@@ -54,7 +55,7 @@ resource "aws_subnet" "public-subnet-1" {
 
   tags = {
     Name = "database subnet 1"
-
+  }
 
 # creating 2nd database subnet
 resource "aws_subnet" "database-subnet-2" {
@@ -65,3 +66,4 @@ resource "aws_subnet" "database-subnet-2" {
 
   tags = {
     Name = "database subnet 2"
+  }
